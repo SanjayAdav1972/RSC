@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import jxl.read.biff.BiffException;
+
 public class Products extends Page {
 	
 	public void purhaseBattery(WebDriver driver) throws IOException {
@@ -67,6 +69,64 @@ public class Products extends Page {
 		}
 		
 		return basketAppear;
+	}
+	
+	public void serachProduct(WebDriver driver, String searchString) throws IOException, BiffException {
+		this.driver = driver;
+		
+		Properties config = new Properties();
+		FileInputStream fis = new FileInputStream(patConfigh);
+		config.load(fis);
+		
+		Properties orConfig = new Properties();
+		FileInputStream fisOR = new FileInputStream(path);
+		orConfig.load(fisOR);
+		
+		String prodFile = config.getProperty("ProductSearchFile");
+		// System.out.println(vrFile);
+		String sheetName = config.getProperty("sheetName");
+		// System.out.println(sheetName);
+		ExcelReader DT = new ExcelReader();
+		
+		String searchItem = "";
+		
+		if (searchString.equals("Keyword")) {
+			// battery chargers
+			searchItem = DT.returnCellData(prodFile, sheetName, 1, 0);
+		}
+		else if (searchString.equals("PartNo")){
+			// MIKROE-1198
+			searchItem = DT.returnCellData(prodFile, sheetName, 1, 1);
+		}	
+		else if (searchString.equals("RSStockNo")){
+			// 882-8904
+			searchItem = DT.returnCellData(prodFile, sheetName, 1, 2);
+		}
+		
+		System.out.println(searchItem);
+		this.driver.findElement(By.xpath(orConfig.getProperty("inputSearch"))).sendKeys(searchItem);
+		this.driver.findElement(By.xpath(orConfig.getProperty("inputSearch"))).submit();
+		//this.driver.findElement(By.xpath(orConfig.getProperty("btnSearch"))).click();
+		
+		if (searchString.equals("PartNo") || searchString.equals("RSStockNo")) {
+			int i = this.driver.findElements(By.xpath(orConfig.getProperty("prodDetails"))).size();
+			if (i > 0) 	{
+				System.out.println("Product exists!");
+			}
+			else {
+				System.out.println("No matching Product exists!");
+			}
+		}
+		else {
+			int i = this.driver.findElements(By.xpath(orConfig.getProperty("resultSearch"))).size();
+			if (i > 0) 	{
+				System.out.println("Product exists!");
+			}
+			else {
+				System.out.println("No matching Product exists!");
+			}
+		}
+		
 	}
 
 }

@@ -16,6 +16,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import jxl.read.biff.BiffException;
 import pages.BasketSummary;
 import pages.HomePage;
 import pages.Products;
@@ -93,10 +94,7 @@ public class RSCOnlineSteps {
 			Products product = new Products();
 			product.purchaseBrand(driver);
 		}	
-		
 	}
-	
-	
 	
 	@Then("I verify 1 item get added in basket")
 	public void I_verify_1_item_get_added_in_basket() throws IOException {
@@ -107,7 +105,21 @@ public class RSCOnlineSteps {
 		{
 			System.out.println("Item added successfully");
 			log.debug("Item added successfully");
-		}
+		}	
+	}
+	
+	@When("^I search product by '(.*?)' provided in excel sheet$")
+	public void I_search_Products(String searchString) throws IOException, BiffException {
+		log.info("I search product by " + searchString);
+				
+		Products product = new Products();
+		product.serachProduct(driver, searchString);
+		
+	}
+	
+	@Then("I check the product exists or not")
+	public void I_check_the_product_exists_or_not() throws IOException {
+		log.info("I check the product exists or not");
 		
 		
 	}

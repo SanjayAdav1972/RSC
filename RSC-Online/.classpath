@@ -13,5 +13,6 @@
 	<classpathentry kind="lib" path="D:/Projects/lib/Cucumber/junit-4.11.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/lib/poi-3.17/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="lib" path="D:/Projects/lib/jar_files/selenium-server-standalone-2.53.1.jar"/>
+	<classpathentry kind="lib" path="D:/Projects/lib/jxl-2.6.12.jar/jxl-2.6.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
