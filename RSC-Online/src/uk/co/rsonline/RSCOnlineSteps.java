@@ -17,9 +17,10 @@ import cucumber.api.java.en.When;
 import pages.BasketSummary;
 import pages.HomePage;
 import pages.Products;
-
+import pages.TestUtility;
 
 public class RSCOnlineSteps {
+	private static final String Utility  = null;
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static WebDriver driver;
 	String path = System.getProperty("user.dir") + "\\properties\\Config.Properties";
@@ -46,10 +47,12 @@ public class RSCOnlineSteps {
 
 		HomePage home = new HomePage();
 		home.selectHomePage(driver);
+		
+		TestUtility.captureScreenshot(driver);
 	}
 	
 	@And("I ensure my basket is empty")
-	public void I_ensure_my_basket_is_empty() {
+	public void I_ensure_my_basket_is_empty() throws IOException {
 		log.info("I ensure my basket is empty");
 		
 		// Here I#m making basket empty as we are not doing purchase
@@ -60,11 +63,12 @@ public class RSCOnlineSteps {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			TestUtility.captureScreenshot(driver);
 		}
 	}
 	
 	@When("I search battery chargers in All Products and added 1 item")
-	public void I_search_battery_chargers_in_All_Products_and_added_1_item() {
+	public void I_search_battery_chargers_in_All_Products_and_added_1_item() throws IOException {
 		log.info("I search battery chargers in All Products and added 1 item");
 		
 		Products product = new Products();
@@ -73,6 +77,7 @@ public class RSCOnlineSteps {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			TestUtility.captureScreenshot(driver);
 		}
 	}
 	

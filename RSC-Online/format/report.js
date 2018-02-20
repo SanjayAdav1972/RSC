@@ -45,28 +45,28 @@ formatter.match({
   "location": "RSCOnlineSteps.I_login_into_RS_online_website_home_page()"
 });
 formatter.result({
-  "duration": 8612483095,
+  "duration": 9952795958,
   "status": "passed"
 });
 formatter.match({
   "location": "RSCOnlineSteps.I_ensure_my_basket_is_empty()"
 });
 formatter.result({
-  "duration": 13138114616,
+  "duration": 13013946581,
   "status": "passed"
 });
 formatter.match({
   "location": "RSCOnlineSteps.I_search_battery_chargers_in_All_Products_and_added_1_item()"
 });
 formatter.result({
-  "duration": 4135189456,
+  "duration": 4460342204,
   "status": "passed"
 });
 formatter.match({
   "location": "RSCOnlineSteps.I_verify_1_item_get_added_in_basket()"
 });
 formatter.result({
-  "duration": 1399611186,
+  "duration": 1213184047,
   "status": "passed"
 });
 });
