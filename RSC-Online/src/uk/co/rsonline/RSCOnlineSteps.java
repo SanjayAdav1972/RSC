@@ -71,6 +71,7 @@ public class RSCOnlineSteps {
 		// Here I#m making basket empty as we are not doing purchase
 		// Also we are adding 1 item at a time. So remove is added earlier item
 		BasketSummary basket = new BasketSummary();
+				
 		try {
 			basket.emptyBasket(driver);
 		} catch (IOException e) {
@@ -80,19 +81,22 @@ public class RSCOnlineSteps {
 		}
 	}
 	
-	@When("I search battery chargers in All Products and added 1 item")
-	public void I_search_battery_chargers_in_All_Products_and_added_1_item() throws IOException {
-		log.info("I search battery chargers in All Products and added 1 item");
-		
-		Products product = new Products();
-		try {
+	@When("^I search '(.*?)' and added 1 item$")
+	public void I_search_Products_and_added_1_item(String searchString) throws IOException {
+		log.info("I search " + searchString + " and added 1 item");
+				
+		if (searchString.contains("All Products")) {
+			Products product = new Products();
 			product.purhaseBattery(driver);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			TestUtility.captureScreenshot(driver);
 		}
+		else if (searchString.contains("Our Brands")){
+			Products product = new Products();
+			product.purchaseBrand(driver);
+		}	
+		
 	}
+	
+	
 	
 	@Then("I verify 1 item get added in basket")
 	public void I_verify_1_item_get_added_in_basket() throws IOException {

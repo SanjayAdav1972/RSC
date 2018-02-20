@@ -7,6 +7,7 @@ import java.util.Properties;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class BasketSummary extends Page {
 
@@ -19,6 +20,11 @@ public class BasketSummary extends Page {
 		
 		this.driver.findElement(By.xpath(config.getProperty("basketSummary"))).click();
 		
+		// Close feedback pop-up window if appears
+		if (this.driver.findElements(By.xpath(config.getProperty("closePopup"))).size()>0) {
+			this.driver.findElement(By.xpath(config.getProperty("closePopup"))).click();
+		}
+
 		if (this.driver.findElements(By.xpath(config.getProperty("clearBasket"))).size()>0) {
 			System.out.println("Items are exists in basket. Clear basket");
 			this.driver.findElement(By.xpath(config.getProperty("clearBasket"))).click();
