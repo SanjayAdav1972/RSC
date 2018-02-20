@@ -1,0 +1,88 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background"
+      },
+      {
+        "line": 5,
+        "name": "01. E2E test_Home to Check out for battery charger",
+        "description": "",
+        "id": "rs-online-end-2-end-testing;01.-e2e-test-home-to-check-out-for-battery-charger",
+        "after": [
+          {
+            "result": {
+              "duration": 1171692064,
+              "status": "passed"
+            },
+            "match": {
+              "location": "RSCOnlineSteps.teardwn()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10482555907,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I login into RS online website home page",
+            "match": {
+              "location": "RSCOnlineSteps.I_login_into_RS_online_website_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 12981999855,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I ensure my basket is empty",
+            "match": {
+              "location": "RSCOnlineSteps.I_ensure_my_basket_is_empty()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4483101092,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I search battery chargers in All Products and added 1 item",
+            "match": {
+              "location": "RSCOnlineSteps.I_search_battery_chargers_in_All_Products_and_added_1_item()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 68076217,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I verify 1 item get added in basket",
+            "match": {
+              "location": "RSCOnlineSteps.I_verify_1_item_get_added_in_basket()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "RS Online End 2 End testing",
+    "description": "",
+    "id": "rs-online-end-2-end-testing",
+    "keyword": "Feature",
+    "uri": "RSCOnline.feature"
+  }
+]

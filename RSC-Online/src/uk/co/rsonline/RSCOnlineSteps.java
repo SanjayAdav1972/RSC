@@ -10,6 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -25,6 +27,17 @@ public class RSCOnlineSteps {
 	public static WebDriver driver;
 	String path = System.getProperty("user.dir") + "\\properties\\Config.Properties";
 	
+	@Before
+	public void tearshutup() {
+		log.info("Set up");
+	}
+	
+	@After
+	public void tearshutdown() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 	
 	@Given("I login into RS online website home page")
 	public void I_login_into_RS_online_website_home_page() throws IOException {
@@ -92,8 +105,6 @@ public class RSCOnlineSteps {
 			log.debug("Item added successfully");
 		}
 		
-		if (driver != null) {
-			driver.quit();
-		}
+		
 	}
 }
