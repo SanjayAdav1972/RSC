@@ -10,8 +10,14 @@ public class ExcelReader {
 	public String path;
 	public int rowCount=0;
 	
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			readExcel Constructor
+	 * Parameter(s):	filePath, sheetName
+	 * Return type:		No
+	 * 
+	 */
 	public void readExcel(String filePath, String sheetName) throws BiffException, IOException {
-		// String FilePath = "D:\\Tutorials\\IDE2E\\SLVehRegistration\\Data\\VR.xls";
 		path = filePath;
 		FileInputStream fs = new FileInputStream(path);
 		Workbook wb = Workbook.getWorkbook(fs);
@@ -33,6 +39,13 @@ public class ExcelReader {
 		}
 	}
 
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			returnRowCount
+	 * Parameter(s):	filePath, sheetName
+	 * Return type:		No of matching rows
+	 * 
+	 */
 	public int returnRowCount(String filePath, String sheetName) throws BiffException, IOException {
 		path = filePath;
 		FileInputStream fs = new FileInputStream(path);
@@ -47,10 +60,10 @@ public class ExcelReader {
 	}
 	
 	/*
-	 * Function: returnCellData
-	 * Input Parameters: filePath, sheetName, rowNo (Row number), columnNo (Column Number)
-	 * Return Type: Cell Data 
-	 * 
+	 * Author: 				Sanjay Adav
+	 * Function: 			returnCellData
+	 * Input Parameters: 	filePath, sheetName, rowNo (Row number), columnNo (Column Number)
+	 * Return Type: 		Cell Data 
 	 * 
 	 */
 	public String returnCellData(String filePath, String sheetName, int rowNo, int columnNo) throws BiffException, IOException {

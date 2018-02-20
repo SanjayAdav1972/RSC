@@ -7,10 +7,16 @@ import java.util.Properties;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class BasketSummary extends Page {
 
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			emptyBasket
+	 * Parameter(s):	WebDriver
+	 * Return type:		HomePage instance
+	 * 
+	 */
 	public HomePage emptyBasket(WebDriver driver) throws IOException {
 		this.driver = driver;
 		

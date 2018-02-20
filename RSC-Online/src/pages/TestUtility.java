@@ -13,6 +13,13 @@ public class TestUtility extends Page {
 	
 	public static String fileName;
 
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			captureScreenshot
+	 * Parameter(s):	WebDriver
+	 * Return type:		No 
+	 * 
+	 */
 	public static void captureScreenshot(WebDriver driver) throws IOException {
 
 		Date d = new Date();
@@ -23,6 +30,5 @@ public class TestUtility extends Page {
 		FileUtils.copyFile(scr, new File(System.getProperty("user.dir") + "\\screenshots\\" + fileName));
 
 	}
-
 
 }

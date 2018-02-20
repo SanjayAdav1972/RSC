@@ -15,6 +15,13 @@ import jxl.read.biff.BiffException;
 
 public class Products extends Page {
 	
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			purhaseBattery
+	 * Parameter(s):	WebDriver
+	 * Return type:		No 
+	 * 
+	 */
 	public void purhaseBattery(WebDriver driver) throws IOException {
 		this.driver = driver;
 		
@@ -34,6 +41,13 @@ public class Products extends Page {
 		this.driver.findElement(By.xpath(config.getProperty("addBtn1"))).click();
 	}
 	
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			purchaseBrand
+	 * Parameter(s):	WebDriver
+	 * Return type:		No 
+	 * 
+	 */
 	public void purchaseBrand(WebDriver driver) throws IOException{
 		this.driver = driver;
 		
@@ -55,6 +69,13 @@ public class Products extends Page {
 		this.driver.findElement(By.xpath(config.getProperty("addBtn1"))).click();
 	}
 	
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			viewBasketAppear
+	 * Parameter(s):	WebDriver
+	 * Return type:		No 
+	 * 
+	 */
 	public boolean viewBasketAppear(WebDriver driver) throws IOException {
 		boolean basketAppear = false;
 		
@@ -71,6 +92,13 @@ public class Products extends Page {
 		return basketAppear;
 	}
 	
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			serachProduct
+	 * Parameter(s):	WebDriver
+	 * Return type:		No 
+	 * 
+	 */
 	public void serachProduct(WebDriver driver, String searchString) throws IOException, BiffException {
 		this.driver = driver;
 		

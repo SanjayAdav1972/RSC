@@ -53,6 +53,8 @@ public class RSCOnlineSteps {
 		} else if (config.getProperty("browser").equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "D:\\Projects\\RSC\\RSC-Online\\chromedriver.exe");
 			driver = new ChromeDriver();
+		} else if (config.getProperty("browser").equals("ie")){
+			// Implementation pending
 		}
 		
 		driver.get(config.getProperty("websiteurl"));
@@ -114,13 +116,10 @@ public class RSCOnlineSteps {
 				
 		Products product = new Products();
 		product.serachProduct(driver, searchString);
-		
 	}
 	
 	@Then("I check the product exists or not")
 	public void I_check_the_product_exists_or_not() throws IOException {
 		log.info("I check the product exists or not");
-		
-		
 	}
 }

@@ -9,6 +9,13 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends Page {
 			
+	/*
+	 * Author: 			Sanjay Adav
+	 * Method: 			selectHomePage
+	 * Parameter(s):	WebDriver
+	 * Return type:		No 
+	 * 
+	 */
 	public void selectHomePage(WebDriver driver) throws IOException {
 		this.driver = driver;
 		
@@ -18,6 +25,5 @@ public class HomePage extends Page {
 		
 		this.driver.findElement(By.xpath(config.getProperty("homeLink"))).click();
 	}
-	
 
 }
